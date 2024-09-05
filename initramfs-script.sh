@@ -6,6 +6,10 @@ cd initramfs/bin
 for i in $(busybox --list); do ln -s busybox $i; done
 cd ../../
 
+# copy busybox
+rm ./initramfs/bin/busybox
+cp /bin/busybox ./initramfs/bin/
+
 # init script
 cat << EOF > initramfs/init
 #!/bin/sh
