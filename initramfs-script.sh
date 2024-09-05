@@ -9,6 +9,7 @@ cd ../../
 # copy busybox
 rm ./initramfs/bin/busybox
 cp /bin/busybox ./initramfs/bin/
+ln -s /init ./initramfs/sbin/init
 
 # init script
 cat << EOF > initramfs/init
